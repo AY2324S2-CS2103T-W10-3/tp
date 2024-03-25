@@ -27,7 +27,7 @@ public class ExportCommand extends Command {
     private ExportManager exportManager;
 
     /**
-     * Creates an ExportCommand with the specified exportManager
+     * Creates an ExportCommand with the specified exportManager. Added for tutorial changing command.
      */
     public ExportCommand(ExportManager exportManager) {
         this.exportManager = exportManager;
