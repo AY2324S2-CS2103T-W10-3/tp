@@ -629,6 +629,7 @@ This sample command merges the student contact entries in a file named `Class 3B
 3. **When adding names to PedagoguePages**,
    1. Names containing `-` or `/`, e.g `Karl-Heinz` or `Mahesh s/o Alagu` would be considered invalid, and an understandable concern. However, we ask that until it is supported, we recommend replacing the `-` or `/` with whitespaces or deleting them (whitespace would be more ideal to make full use of our find function).
    2. Numeric characters are allowed, and are chosen to be before Alphabetic characters lexicographically (so `John 1` would appear before `John A` if sorted by name). Names containing numbers are exceedingly uncommon, but we intentionally allow them, in favour of greater freedom. (and they are fully supported in PedagoguePages!)
+
 --------------------------------------------------------------------------------------------------------------------
 
 <div style="page-break-after: always;"></div>
