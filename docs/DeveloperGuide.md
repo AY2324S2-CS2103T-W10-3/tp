@@ -1,15 +1,21 @@
----
-layout: page
-title: Developer Guide
----
+# Pedagogue Pages Developer Guide
+
+# Table of Contents
+
 * Table of Contents
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Acknowledgements**
 
 * This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
+* `VALIDATION_REGEX` used in `Tag` class generated via ChatGPT.
+* Pattern regex in `extractStudentIds` method in `ImportManager` class generated via ChatGPT.
+* Pattern regex in `ensureNoDuplicateIds` method in `ImportManager` class generated via ChatGPT.
+* Pattern regex in `ensureNoInternalDuplicates` method in `ImportManager` class generated via ChatGPT.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
@@ -17,6 +23,8 @@ title: Developer Guide
 Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Design**
 
@@ -65,6 +73,8 @@ For example, the `Logic` component defines its API in the `Logic.java` interface
 
 The sections below give more details of each component.
 
+<div style="page-break-after: always;"></div>
+
 ### UI component
 
 The **API** of this component is specified in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
@@ -81,6 +91,8 @@ The `UI` component,
 * listens for changes to `Model` data so that the UI can be updated with the modified data.
 * keeps a reference to the `Logic` component, because the `UI` relies on the `Logic` to execute commands.
 * depends on some classes in the `Model` component, as it displays `Person` object residing in the `Model`.
+
+<div style="page-break-after: always;"></div>
 
 ### Logic component
 
@@ -116,7 +128,10 @@ How the parsing works:
 * When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
+<div style="page-break-after: always;"></div>
+
 ### Model component
+
 **API** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="450" />
@@ -135,6 +150,7 @@ The `Model` component,
 
 </div>
 
+<div style="page-break-after: always;"></div>
 
 ### Storage component
 
@@ -152,6 +168,8 @@ The `Storage` component,
 Classes used by multiple components are in the `seedu.addressbook.commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Implementation**
 
@@ -187,6 +205,8 @@ The following sequence diagram shows how `add <name><Phone_number1>...` command 
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ### Delete feature
 
 #### Implementation
@@ -215,6 +235,8 @@ The following sequence diagram shows how `delete <id>` command works:
   * Cons: There is a possibility that two students have the same name and the `delete` function may not delete the intended student.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ### Edit feature
 
 #### Implementation
@@ -246,6 +268,8 @@ The following sequence diagram shows how `edit id <name><Phone_number1>...` comm
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ### Find feature
 
 #### Implementation
@@ -273,6 +297,7 @@ The following sequence diagram shows how `find name Bob` command works:
   * Pros: The command is clean and easy to type.
   * Cons: Users may forget which number matches to which mode.
 
+<div style="page-break-after: always;"></div>
 
 ### Delete Tag feature
 
@@ -302,6 +327,8 @@ The following sequence diagram shows how `deleteTag <TAG>` command works:
   * Cons: If a student is also included in another group, the other group will be affected by this operation.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ### Change Data Source feature
 
 #### Implementation
@@ -338,6 +365,8 @@ The following sequence diagram shows how `cd <FILEPATH>` command works:
   * Cons: Users cannot create a new student contact list by using `cd` command.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ### Undo feature
 
@@ -413,7 +442,10 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ### Export feature
+
 #### Implementation
 The export feature is facilitated by the `ExportManager` class, which converts the currently viewed `ObservableList<Person>`
 person list into a `String` which is then written to a specified `filePath` in the `exports` folder based upon the 
@@ -438,7 +470,10 @@ The following activity diagram shows what happens when the user executes the com
   * Cons: Might result in the user having files he/she cannot differentiate due to the naming format used.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ### Import feature
+
 #### Implementation
 The import feature is facilitated by the `ImportManager` class, which converts the String contents within a 
 specified CSV file in the `imports` folder based upon the `FILENAME` input provided by the user to a String 
@@ -463,7 +498,10 @@ The following activity diagram shows what happens when the user executes the com
 
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ### Migrate feature
+
 #### Implementation
 The import feature is facilitated by the `ImportManager` class, which converts the String contents within a
 specified CSV file in the `imports` folder based upon the `FILENAME` input provided by the user to a String
@@ -489,6 +527,8 @@ The following activity diagram shows what happens when the user executes the com
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Documentation, logging, testing, configuration, dev-ops**
 
 * [Documentation guide](Documentation.md)
@@ -498,6 +538,8 @@ The following activity diagram shows what happens when the user executes the com
 * [DevOps guide](DevOps.md)
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Requirements**
 
@@ -543,7 +585,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* ` | teacher                  |  set reminders for events such as parent-teacher/student-teacher meetings| I don't miss any important appointments|
 | `*` | teacher |  utilize the application to understand the geographic distribution of my students | planning school trips or outreach programs |
 
-
+<div style="page-break-after: always;"></div>
 
 ### Use cases
 
@@ -683,6 +725,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
+<div style="page-break-after: always;"></div>
+
 ### Non-Functional Requirements
 
 1.  Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
@@ -700,6 +744,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **MB**: Mega Bytes
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **Appendix: Instructions for manual testing**
 
@@ -921,9 +967,28 @@ testers are expected to do more *exploratory* testing.
    2. When the data file is corrupted, we clear the corrupted file and return an empty student contact list.
    3. The data file is stored automatically after each command which modifies the data file.
 
+### Sort student list
+
+1. Sorts the currently viewed student list by 'id'
+    1. Test case `sort /id`<br>
+       Expected: Current viewed student list is sorted by id.List sorted by 'id' message shown as status message.
+
+    2. Test case `sort`<br>
+       Expected: Error details shown in the status message.
+
+2. Sorts the currently viewed student list by 'name'
+    1. Test case `sort /name`<br>
+       Expected: Current viewed student list is sorted by name. List sorted by 'name' message shown as status message.
+
+    2. Test case `sort`<br>
+        Expected: Error details shown in the status message.
+
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## Appendix: Effort
+
 * Difficulty level: Medium
 * Effort required: ~7000+ LoC inclusive of documentation
 * Achievements: 
@@ -933,7 +998,10 @@ testers are expected to do more *exploratory* testing.
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## Appendix: Planned enhancements
+
 * **Team size: 4**
 * **Total number of planned enhancements: 5**
 
@@ -945,10 +1013,4 @@ testers are expected to do more *exploratory* testing.
 ### Enhancements of current features
 1. Additional fields and types of people to add (i.e. teachers)
 2. Improved searching that supports searching with minor typos
---------------------------------------------------------------------------------------------------------------------
-## Acknowledgements
-1. `VALIDATION_REGEX` used in `Tag` class generated via ChatGPT.
-2. Pattern regex in `extractStudentIds` method in `ImportManager` class generated via ChatGPT.
-3. Pattern regex in `ensureNoDuplicateIds` method in `ImportManager` class generated via ChatGPT.
-4. Pattern regex in `ensureNoInternalDuplicates` method in `ImportManager` class generated via ChatGPT.
 --------------------------------------------------------------------------------------------------------------------
