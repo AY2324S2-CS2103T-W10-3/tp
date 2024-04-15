@@ -1,5 +1,3 @@
-# Pedagogue Pages User Guide
-
 Pedagogue Pages is a desktop app for **teachers of young children** to **manage class rosters and keep track of their students' contact details**. It is a **Command Line Interface (CLI)** based application, whereby you can type in various commands into an input box to perform certain actions. It also comes with a **Graphical User Interface (GUI)** to display information to you.
 
 We believe that Pedagogue Pages will represent a huge upgrade for you when managing your 
