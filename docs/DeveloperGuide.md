@@ -1,5 +1,7 @@
-# Pedagogue Pages Developer Guide
-
+---
+layout: page
+title: Pedagogue Pages Developer Guide
+---
 # Table of Contents
 
 * Table of Contents
