@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Developer Guide
+title: Pedagogue Pages Developer Guide
 ---
 # Table of Contents
 
