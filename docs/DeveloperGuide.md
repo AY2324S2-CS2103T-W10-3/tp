@@ -18,6 +18,7 @@ title: Pedagogue Pages Developer Guide
 * Pattern regex in `extractStudentIds` method in `ImportManager` class generated via ChatGPT.
 * Pattern regex in `ensureNoDuplicateIds` method in `ImportManager` class generated via ChatGPT.
 * Pattern regex in `ensureNoInternalDuplicates` method in `ImportManager` class generated via ChatGPT.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
@@ -1031,4 +1032,5 @@ testers are expected to do more *exploratory* testing.
 ### Enhancements of current features
 1. Additional fields and types of people to add (i.e. teachers)
 2. Improved searching that supports searching with minor typos
+
 --------------------------------------------------------------------------------------------------------------------
